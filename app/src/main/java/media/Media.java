@@ -59,7 +59,7 @@ public class Media {
      * PUBLIC  API
      * STOPS  CURRENT  AUDIO RECORDS
      */
-    public static Media stopRecordAudio(Context ctx,String outPutFile){
+    public static Media stopRecordAudio(Context ctx){
         // THIS METHOD INITIATE  STP RECORD
         if(instance(ctx).stopRecording()){
             return instance(ctx);
@@ -179,6 +179,7 @@ public class Media {
 
     private Boolean playAudio(String inputFile) {
         // CHECK ALREADY EXISTS
+        stopAudio();
         if (mMediaPlayer == null) {
             try{
             //CREATE A NEW PLAYER
