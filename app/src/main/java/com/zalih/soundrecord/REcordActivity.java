@@ -3,7 +3,7 @@ package com.zalih.soundrecord;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class REcordActivity extends AppCompatActivity {
+public class RecordActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
