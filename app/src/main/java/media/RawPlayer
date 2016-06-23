@@ -3,9 +3,6 @@ package media;
 import android.content.Context;
 import android.media.MediaPlayer;
 
-/***
- * SecurePoint
- */
 public class RawPlayer {
 
     MediaPlayer mp=new MediaPlayer();
