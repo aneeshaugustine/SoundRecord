@@ -1,0 +1,55 @@
+package media;
+ 
+import android.content.Context;
+import android.media.MediaPlayer;
+
+/***
+ * SecurePoint
+ */
+public class RawPlayer {
+
+    MediaPlayer mp=new MediaPlayer();
+    private static Media instance;
+
+    private static Media getInstance() {
+        if(instance == null) {
+            instance = new Media();
+        }
+        return instance;
+    }
+
+    public static void play(Context ctx ,int filename){
+            getInstance().playMusic(ctx,filename);
+    }
+    public  void playMusic(Context ctx ,int filename) {
+        try {
+
+            try {
+                if (mp.isPlaying()) {
+                    mp.stop();
+                    mp.release();
+                }
+                mp = MediaPlayer.create(ctx, filename);
+                mp.start();
+            } catch (Exception e) {
+                e.printStackTrace();
+                e.printStackTrace();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void stop(){
+        getInstance().stopMusic();
+    }
+    public  void stopMusic() {
+        try {
+            if(mp.isPlaying()){
+                mp.stop();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
